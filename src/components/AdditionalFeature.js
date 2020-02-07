@@ -1,6 +1,11 @@
 import React from 'react';
+import {addFeature} from "../actions"
 
 const AdditionalFeature = props => {
+  handleAddFeature = e => {
+    e.preventDefault();
+    props.addFeature(state.addFeatureName);
+  }
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
@@ -10,4 +15,10 @@ const AdditionalFeature = props => {
   );
 };
 
-export default AdditionalFeature;
+const mapStatetoProps = state => {
+  return {
+    feature: state.additionalFeatures
+  }
+}
+export default connect(mapStatetoProps, {})(AdditionalFeature);
+

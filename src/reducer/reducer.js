@@ -15,10 +15,13 @@ const initialState = {
     ]
   };
 
-  export const reducer = (state = initialState, action) => {
+  export default function reducer (state = initialState, action) {
       switch(action.type) {
           case ADD_FEATURE:
-              return{};
+              return{
+                  ...state,
+                  feature: [...state.additionalFeatures, action.payload]
+              };
             default:
                 return state;
       }

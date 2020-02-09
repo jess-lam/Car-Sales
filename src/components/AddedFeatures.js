@@ -1,7 +1,6 @@
 import React from 'react';
 
 import AddedFeature from './AddedFeature';
-import { connect } from 'http2';
 
 const AddedFeatures = props => {
   return (
@@ -20,10 +19,4 @@ const AddedFeatures = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    car: state.car
-  }
-}
-
-export default connect(mapStateToProps, {}) (AddedFeatures);
+export default AddedFeatures;
